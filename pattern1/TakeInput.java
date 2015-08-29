@@ -37,7 +37,7 @@ public class TakeInput {
 		else if(parser.equals("E")){
 			System.exit(0);
 		}
-		data.display();
+		//data.display();
 	}
 
 	

@@ -13,12 +13,12 @@ public class P1controller {
 		CircularShift cs = new CircularShift();
 		ArrayList<String> result = new ArrayList<String>(); 
 		//result.add("test");
-		while(true){
+		//while(true){
 			ti.takeInput(data);
 			cs.circularShift(data);
 			al.alphabetize(data);
-			display(data);
-		}
+			data.display();
+		//}
 	}
 	
 	public void display(Data data){
