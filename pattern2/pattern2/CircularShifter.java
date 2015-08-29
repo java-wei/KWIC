@@ -48,6 +48,7 @@ public class CircularShifter {
 		Alphabetizer.sort();
 	}	
 
+	// Capitalize first character of the keyword that is not an ignored word
 	private String[] capitalizeFirstCharacter(String[] arr) {
 		for (int i=0; i<arr.length; i++) {
 			String word = arr[i].replaceAll("\\s", "");

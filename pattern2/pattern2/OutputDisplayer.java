@@ -20,7 +20,7 @@ public class OutputDisplayer {
 	public void printLinesWithoutIgnoredWords() {
 		int size = Lines.getSize();
 		int numOfResult = 0;
-		System.out.println("List of words to ignore is empty!\n");
+		System.out.println("\n\n\nList of words to ignore is empty!\n");
 		System.out.println("=========================================");
 		
 		for(int i=0; i<size; i++) {
@@ -34,7 +34,7 @@ public class OutputDisplayer {
 	public void printLinesWithIgnoredWords() {
 		int size = Lines.getSize();
 		int numOfResult = 0;
-		System.out.println("List of words to ignore is " + Lines.getIgnoredWordsString() + ".\n");
+		System.out.println("\n\n\nList of words to ignore is " + Lines.getIgnoredWordsString() + ".\n");
 		System.out.println("=========================================");
 		
 		ArrayList<String> ignoredWordList = Lines.getIgnoredWordsList();

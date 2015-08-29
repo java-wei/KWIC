@@ -3,10 +3,6 @@ package pattern2;
 import java.util.ArrayList;
 
 /**
- * 
- */
-
-/**
  * @author Charles Cheng
  *
  */
@@ -14,9 +10,7 @@ public class Lines {
 
 	private static ArrayList<String> lines = new ArrayList<String>();
 	private static ArrayList<String> wordsToIgnore = new ArrayList<String>();
-	
-	public Lines() {
-	}
+
 
 	public static void insert(ArrayList<String> shiftedLines) {
 		lines.addAll(shiftedLines);

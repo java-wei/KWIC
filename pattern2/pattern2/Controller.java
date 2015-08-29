@@ -18,11 +18,12 @@ public class Controller {
 
 		Scanner sc = new Scanner(System.in);
 		String command;
-		System.out.println("Please enter the command: ");
+		System.out.println("Welcome to KWIC under Implict Invocation architecture.  Please enter the command:");
 		while(sc.hasNext()) {
 			command = sc.nextLine();
 			processor.processInput(command);
 			displayer.display();
+			System.out.println("Please enter the command:");
 		}
 		sc.close();
 	}

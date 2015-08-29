@@ -28,6 +28,7 @@ public class Title {
 		for (int i=0; i<length; i++) {
 			titles.add(arr[i].trim());
 		}
+		// Invoke circular shifter class
 		shifter.circularShift(start, start + length);
 	}
 
