@@ -1,10 +1,11 @@
 package pattern1;
 
+import java.util.Collections;
+
 public class Alphabetizer {
 
 	public void alphabetize(Data data) {
-		// TODO Auto-generated method stub
-		
+		Collections.sort(data.result);	
 	}
 
 
