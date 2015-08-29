@@ -12,7 +12,7 @@ public class P1controller {
 		Alphabetizer al = new Alphabetizer();
 		CircularShift cs = new CircularShift();
 		ArrayList<String> result = new ArrayList<String>(); 
-		//result.add("test");
+		//make it to be recursive call
 		//while(true){
 			ti.takeInput(data);
 			cs.circularShift(data);
