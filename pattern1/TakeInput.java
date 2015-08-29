@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public class TakeInput {
 	CircularShift cs = new CircularShift();
@@ -16,23 +18,26 @@ public class TakeInput {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String s = br.readLine();
-		ArrayList<String> inputList = (ArrayList<String>) Arrays.asList(s.split(","));
+		List<String> inputList = new LinkedList<String>(Arrays.asList(s.split(",")));
 		
 		String parser = inputList.remove(0);
-		if(inputList.get(0).equals("T")){
+		
+		//add titles
+		if(parser.equals("T")){
 			data.titles.addAll(inputList);//to-do: check repeat titles and words to ignore
 		}
-		else if(inputList.get(0).equals("W")){
+		//add words to ignore
+		else if(parser.equals("I")){
 			data.wordsToIgnore.addAll(inputList);
 		}
-		else if(inputList.get(0).equals("C")){
+		//clear everything in data
+		else if(parser.equals("C")){
 			data = new Data();
-		}
-			
-		else if(inputList.get(0).equals("E"))
+		}	
+		else if(parser.equals("E")){
 			System.exit(0);
-			
-		
+		}
+		data.display();
 	}
 
 	
