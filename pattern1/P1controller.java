@@ -13,15 +13,13 @@ public class P1controller {
 		CircularShift cs = new CircularShift();
 		ArrayList<String> result = new ArrayList<String>(); 
 		//make it to be recursive call
-		//while(true){
+		while(true){
 			ti.takeInput(data);
 			cs.circularShift(data);
 			al.alphabetize(data);
 			data.display();
-		//}
+		}
+		//return data.result;
 	}
 	
-	public void display(Data data){
-		//to do
-	}
 }
