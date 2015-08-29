@@ -1,3 +1,5 @@
+import java.awt.Button;
+import java.awt.Panel;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +12,6 @@ public class controller {
 	
 	public static void main(String[] args) throws Exception {
 		P1controller p1 = new P1controller();
-		
 		List<String> result = new ArrayList<String>();
 		System.out.println("Please indicate your pattern choice: ");
 		System.out.println("1: Pipe and Filter \t2: Implicit Invocation");
@@ -23,7 +24,10 @@ public class controller {
 		//else 
 		//	result = runPattern2();
 		for(int i = 0; i < result.size(); i++)
-			System.out.print(result.get(i));
+			System.out.println(result.get(i));
+		System.out.println();
+		System.out.println();
+		System.out.println();
 	}
 
 

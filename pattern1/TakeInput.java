@@ -11,10 +11,10 @@ import java.util.List;
 public class TakeInput {
 	CircularShift cs = new CircularShift();
 	public void takeInput(Data data) throws IOException {
-		System.out.println("add title format: T, title1, title2,... ");
-		System.out.println("add words to ignore format: I, word1, word2,...");
-		System.out.println("exit format: E");
-		System.out.println("clear memory: C");
+		System.out.println("Add title format: T, title1, title2,... ");
+		System.out.println("Add words to ignore format: I, word1, word2,...");
+		System.out.println("Exit format: E");
+		System.out.println("Clear memory: C");
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String s = br.readLine();
@@ -28,7 +28,8 @@ public class TakeInput {
 		}
 		//add words to ignore
 		else if(parser.equals("I")){
-			data.wordsToIgnore.addAll(inputList);
+			List<String> wordList = new LinkedList<String>(Arrays.asList(s.substring(1).replaceAll("^[,\\s]+", "").split("[,\\s]+")));
+			data.wordsToIgnore.addAll(wordList);
 		}
 		//clear everything in data
 		else if(parser.equals("C")){
