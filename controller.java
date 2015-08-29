@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import pattern1.P1controller;
+import pattern2.Controller;
 
 
 public class controller {
@@ -20,8 +21,8 @@ public class controller {
 		//allow users to switch pattern by typing 1 or 2
 		if(choice == 1)
 			p1.runPattern1();
-		//else 
-		//	result = runPattern2();
+		else 
+			Controller.run();
 		for(int i = 0; i < result.size(); i++)
 			System.out.print(result.get(i));
 	}
