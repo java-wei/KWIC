@@ -21,7 +21,6 @@ public class CircularShift {
 			
 			for(int j = 0; j<wordsOfTitleLenth; j++){				
 				//if this is a key word
-				boolean isKeyWord = true;
 				if(!data.wordsToIgnore.contains(wordsOfTitle.get(0))) {
 					
 					//capitalize the first letter of the word
