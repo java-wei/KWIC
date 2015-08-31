@@ -15,7 +15,7 @@ import pattern2.Controller;
 public class TakeInput {
 	CircularShift cs = new CircularShift();
 	public void takeInput(Data data) throws IOException {
-		System.out.println("Welcome to KWIC under Modified Abstract Data Type.  Please enter the command:");
+		System.out.println("Welcome to KWIC under Shared Data Solution.  Please enter the command:");
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String s = br.readLine();

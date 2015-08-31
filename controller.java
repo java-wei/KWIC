@@ -13,7 +13,7 @@ public class controller {
 		P1controller p1 = new P1controller();
 		
 		System.out.println("Please indicate your pattern choice: ");
-		System.out.println("1: Modified Abstract Data Type \t2: Implicit Invocation");
+		System.out.println("1: Shared Data Solution \t2: Implicit Invocation");
 		
 		int choice = 0;
 		try {
