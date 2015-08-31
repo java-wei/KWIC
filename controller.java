@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import pattern1.P1controller;
-//import pattern2.Controller;
+import pattern2.Controller;
 
 
 public class controller {
@@ -25,7 +25,7 @@ public class controller {
 		if(choice == 1) {
 			p1.runPattern1();
 		} else {
-			pattern2.Controller.run();
+			Controller.run();
 		}
 	}
 
