@@ -13,35 +13,46 @@ import pattern2.Controller;
 public class TakeInput {
 	CircularShift cs = new CircularShift();
 	public void takeInput(Data data) throws IOException {
-		System.out.println("Add title format: T, title1, title2,... ");
-		System.out.println("Add words to ignore format: I, word1, word2,...");
-		System.out.println("Exit format: E");
-		System.out.println("Clear memory: C");
+		System.out.println("Welcome to KWIC under Modified Abstract Data Type.  Please enter the command:");
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String s = br.readLine();
-		List<String> inputList = new LinkedList<String>(Arrays.asList(s.split(",")));
+		String parser;
+		List<String> inputList = new LinkedList<String>();
+		if(s.indexOf(" ")>=1){
+			parser = s.substring(0, s.indexOf(" "));
+			inputList= new LinkedList<String>(Arrays.asList(s.trim().substring(s.indexOf(" ")).split(",")));
+		}
+		else 
+			parser = s.trim();
 		
-		String parser = inputList.remove(0);
+		
 		
 		//add titles
-		if(parser.equalsIgnoreCase("T")){
+		if(parser.equalsIgnoreCase("AT")){
 			data.titles.addAll(inputList);//to-do: check repeat titles and words to ignore
 		}
 		//add words to ignore
-		else if(parser.equalsIgnoreCase("I")){
+		else if(parser.equalsIgnoreCase("AI")){
 			List<String> wordList = new LinkedList<String>(Arrays.asList(s.substring(1).replaceAll("^[,\\s]+", "").split("[,\\s]+")));
 			data.wordsToIgnore.addAll(wordList);
 		}
 		//clear everything in data
-		else if(parser.equalsIgnoreCase("C")){
-			data = new Data();
+		else if(parser.equalsIgnoreCase("CT")){
+			data.titles.clear();
+		} 
+		else if(parser.equalsIgnoreCase("CI")){
+			data.wordsToIgnore.clear();
 		} 
 		else if(parser.equalsIgnoreCase("switch")){
 			Controller.run();
 		}
-		else if(parser.equalsIgnoreCase("E")){
+		else if(parser.equalsIgnoreCase("Exit")){
+			System.out.println("See you again. Have a nice day!");
 			System.exit(0);
+		}
+		else{
+			System.out.println("Wrong Command!!");
 		}
 		//data.display();
 	}
