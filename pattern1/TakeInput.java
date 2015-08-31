@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import pattern2.Controller;
+
 public class TakeInput {
 	CircularShift cs = new CircularShift();
 	public void takeInput(Data data) throws IOException {
@@ -23,19 +25,22 @@ public class TakeInput {
 		String parser = inputList.remove(0);
 		
 		//add titles
-		if(parser.equals("T")){
+		if(parser.equalsIgnoreCase("T")){
 			data.titles.addAll(inputList);//to-do: check repeat titles and words to ignore
 		}
 		//add words to ignore
-		else if(parser.equals("I")){
+		else if(parser.equalsIgnoreCase("I")){
 			List<String> wordList = new LinkedList<String>(Arrays.asList(s.substring(1).replaceAll("^[,\\s]+", "").split("[,\\s]+")));
 			data.wordsToIgnore.addAll(wordList);
 		}
 		//clear everything in data
-		else if(parser.equals("C")){
+		else if(parser.equalsIgnoreCase("C")){
 			data = new Data();
-		}	
-		else if(parser.equals("E")){
+		} 
+		else if(parser.equalsIgnoreCase("switch")){
+			Controller.run();
+		}
+		else if(parser.equalsIgnoreCase("E")){
 			System.exit(0);
 		}
 		//data.display();
