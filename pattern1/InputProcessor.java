@@ -11,7 +11,7 @@ import java.util.List;
 
 import pattern2.Controller;
 
-public class TakeInput {
+public class InputProcessor {
 	CircularShift cs = new CircularShift();
 	public void takeInput(Data data) throws IOException {
 		System.out.println("Welcome to KWIC under Shared Data Solution.  Please enter the command:");

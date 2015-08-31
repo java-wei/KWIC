@@ -5,7 +5,7 @@ import java.io.IOException;
 public class P1controller {
 	
 	public void runPattern1() {
-		TakeInput ti = new TakeInput();
+		InputProcessor ti = new InputProcessor();
 		Data data = new Data();
 		Alphabetizer al = new Alphabetizer();
 		CircularShift cs = new CircularShift();
