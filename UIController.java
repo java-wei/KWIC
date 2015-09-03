@@ -126,14 +126,11 @@ public class UIController {
 		    public void actionPerformed(ActionEvent arg0) {
 		    	
 		       if(chckbxSharedSolution.isSelected()&&!chckbxNewCheckBox.isSelected()){
-		        	System.out.println("Pattern" +Command.getText()+ "was called");
 		        	try {
-						textArea.setText(p1.run(Command.getText()));
+						textArea.setText(p1.runUIController(Command.getText()));
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-		        	//display("Pattern1 was called");
 		     } else if(chckbxNewCheckBox.isSelected()&&!chckbxSharedSolution.isSelected()){
 		        	textArea.setText(Command.getText());
 		     } else

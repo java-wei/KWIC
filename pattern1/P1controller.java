@@ -10,22 +10,17 @@ public class P1controller {
 		Alphabetizer al = new Alphabetizer();
 		CircularShift cs = new CircularShift();
 	
-	public void runPattern1() throws Exception {
+	public void runController() throws Exception {
 		
-		String result;
-		//make it to be recursive call
 		while(true){
-			result = "";
 			ti.takeInput(data);;
 			cs.circularShift(data);
 			al.alphabetize(data);
-			/*for(int  i = 0; i< data.result.size();i++)
-				result+=data.result.get(i)+"\n";
-			return result;*/
 			data.display();
 		}
 	}
-	public String run(String s) throws Exception {
+	
+	public String runUIController(String s) throws Exception {
 		
 		String result;
 		//make it to be recursive call

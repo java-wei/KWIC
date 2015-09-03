@@ -52,7 +52,7 @@ public class InputProcessor {
 			System.exit(0);
 		} else if (commandType.equalsIgnoreCase("switch")) {	// Switch command
 			P1controller p1 = new P1controller();
-			p1.runPattern1();
+			p1.runController();
 		} else {	// Invalid command
 			System.out.println("Invalid command pattern!\n");
 		}

@@ -23,7 +23,7 @@ public class controller {
 		}
 		//allow users to switch pattern by typing 1 or 2
 		if(choice == 1) {
-			p1.runPattern1();
+			p1.runController();
 		} else {
 			Controller.run();
 		}
