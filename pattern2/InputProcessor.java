@@ -33,18 +33,7 @@ public class InputProcessor {
 		} else if(commandType.equalsIgnoreCase("CI")) {	// Clear ignored keyword command
 			titles.clearIgnoredWords();
 		} else if(commandType.equalsIgnoreCase("help")) {
-			File file = new File("README.txt");
-			try {
-				if (System.getProperty("os.name").toLowerCase().contains("windows")) {
-					String cmd = "rundll32 url.dll,FileProtocolHandler " + file.getCanonicalPath();
-					Runtime.getRuntime().exec(cmd);
-				} else {
-					Desktop.getDesktop().edit(file);
-				}
-			}
-			catch (Exception e) {
-				System.out.println(e.getMessage());
-			}
+			openHelpFile();
 		} else if(commandType.equalsIgnoreCase("exit")) {	// Exit command
 			System.out.println("See you again. Have a nice day!");
 			System.exit(0);
@@ -53,5 +42,19 @@ public class InputProcessor {
 		}
 	}
 	
+	private void openHelpFile() {
+		File file = new File("README.txt");
+		try {
+			if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+				String cmd = "rundll32 url.dll,FileProtocolHandler " + file.getCanonicalPath();
+				Runtime.getRuntime().exec(cmd);
+			} else {
+				Desktop.getDesktop().edit(file);
+			}
+		}
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 	
 }

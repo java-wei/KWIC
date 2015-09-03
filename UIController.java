@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import java.awt.Dimension;
 import javax.swing.JCheckBox;
 import pattern1.P1controller;
+import pattern2.Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
@@ -66,15 +67,15 @@ public class UIController {
 		frame.getContentPane().add(textArea);
 		
 		final JCheckBox chckbxSharedSolution = new JCheckBox("Shared Solution");
-		chckbxSharedSolution.setBounds(64, 4, 150, 36);
+		chckbxSharedSolution.setBounds(84, 4, 150, 36);
 		frame.getContentPane().add(chckbxSharedSolution);
 		
 		final JCheckBox chckbxNewCheckBox = new JCheckBox("Implicit Invocation");
 		chckbxNewCheckBox.setBounds(230, 11, 150, 23);
 		frame.getContentPane().add(chckbxNewCheckBox);
 		
-		JLabel lblPattern = new JLabel("Pattern:");
-		lblPattern.setBounds(3, 6, 73, 34);
+		JLabel lblPattern = new JLabel("Architecture:");
+		lblPattern.setBounds(3, 6, 103, 34);
 		frame.getContentPane().add(lblPattern);
 		lblCommand.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblCommand.setBounds(0, 51, 76, 40);
@@ -85,6 +86,7 @@ public class UIController {
 		InputMap iMap = Command.getInputMap(condition);
 		ActionMap aMap = Command.getActionMap();
 
+		Controller.run("help");
 		String enter = "enter";
 		iMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter);
 		
@@ -101,7 +103,7 @@ public class UIController {
 						e.printStackTrace();
 					}
 		       } else if(chckbxNewCheckBox.isSelected()&&!chckbxSharedSolution.isSelected()){
-		        	textArea.setText(pattern2.Controller.run(Command.getText()));
+		        	textArea.setText(Controller.run(Command.getText()));
 		       } else
 		    	 	textArea.setText("PLEASE TICK ONE PATTERN ONLY!!!");
 		     	}

@@ -26,9 +26,6 @@ COMMAND
 		
 	EXIT
 		Exit from the system
-
-	SWITCH
-		Switch to KWIC implementation under architecture 1 (Pipe and Filter).
 	
 	HELP
 		Open this documentation.
