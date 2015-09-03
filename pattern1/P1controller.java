@@ -1,15 +1,12 @@
 package pattern1;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 public class P1controller {
 	
 		InputProcessor ti = new InputProcessor();
 		Data data = new Data();
 		Alphabetizer al = new Alphabetizer();
 		CircularShift cs = new CircularShift();
-	
+	//Called by Controller return void
 	public void runController() throws Exception {
 		
 		while(true){
@@ -20,6 +17,8 @@ public class P1controller {
 		}
 	}
 	
+	
+	//Called by UIController return String
 	public String runUIController(String s) throws Exception {
 		
 		String result;

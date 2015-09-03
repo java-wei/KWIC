@@ -72,6 +72,7 @@ public class InputProcessor {
 		
 	}
 	
+	//Called by UIController process
 	public void processCommand(Data data,String s) throws Exception {
 		String parser;
 		List<String> inputList = new LinkedList<String>();
