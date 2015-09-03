@@ -8,13 +8,10 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import pattern2.Controller;
-
 public class InputProcessor {
 	CircularShift cs = new CircularShift();
 	//not for ui call. For controller call
 	public void takeInput(Data data) throws Exception {
-		System.out.println("Welcome to KWIC under Shared Data Solution.  Please enter the command:");
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String s = br.readLine();
@@ -44,9 +41,6 @@ public class InputProcessor {
 		} 
 		else if(parser.equalsIgnoreCase("CI")){
 			data.wordsToIgnore.clear();
-		} 
-		else if(parser.equalsIgnoreCase("switch")){
-			Controller.run();
 		}
 		else if(parser.equalsIgnoreCase("Exit")){
 			System.out.println("See you again. Have a nice day!");
@@ -100,9 +94,6 @@ public class InputProcessor {
 		} 
 		else if(parser.equalsIgnoreCase("CI")){
 			data.wordsToIgnore.clear();
-		} 
-		else if(parser.equalsIgnoreCase("switch")){
-			Controller.run();
 		}
 		else if(parser.equalsIgnoreCase("Exit")){
 			System.out.println("See you again. Have a nice day!");

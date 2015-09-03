@@ -9,34 +9,28 @@ import java.util.ArrayList;
 
 public class OutputDisplayer {
 
-	public void display() {
+	
+	public String getOutput() {
 		if(Lines.getIgnoredWordsSize() == 0) {
-			printLinesWithoutIgnoredWords();
+			return getOutputWithoutIgnoredWords();
 		} else {
-			printLinesWithIgnoredWords();
+			return getOutputWithIgnoredWords();
 		}
 	}
 
-	public void printLinesWithoutIgnoredWords() {
+	public String getOutputWithoutIgnoredWords() {
 		int size = Lines.getSize();
-		int numOfResult = 0;
-		System.out.println("\n\n\nList of words to ignore is empty!\n");
-		System.out.println("=========================================");
-		
+		String result = "";
 		for(int i=0; i<size; i++) {
-			System.out.println(Lines.getLine(i));
-			numOfResult++;
+			result += Lines.getLine(i) + "\n";
 		}
-		System.out.println("=========================================");
-		System.out.println("\nNumber of lines is " + numOfResult + "!\n");
+		
+		return result;
 	}
 	
-	public void printLinesWithIgnoredWords() {
+	public String getOutputWithIgnoredWords() {
 		int size = Lines.getSize();
-		int numOfResult = 0;
-		System.out.println("\n\n\nList of words to ignore is " + Lines.getIgnoredWordsString() + ".\n");
-		System.out.println("=========================================");
-		
+		String result = "";
 		ArrayList<String> ignoredWordList = Lines.getIgnoredWordsList();
 		String line, firstWord;
 		
@@ -44,13 +38,11 @@ public class OutputDisplayer {
 			line = Lines.getLine(i);
 			firstWord = line.substring(0, line.indexOf(' ')).toLowerCase();
 			if(!ignoredWordList.contains(firstWord)) {
-				System.out.println(Lines.getLine(i));
-				numOfResult++;
+				result += Lines.getLine(i) + "\n";
 			}
 		}
 		
-		System.out.println("=========================================");
-		System.out.println("\nNumber of lines is " + numOfResult + "!\n");
+		return result;
 	}
 	
 }

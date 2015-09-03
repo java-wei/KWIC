@@ -3,8 +3,6 @@ package pattern2;
 import java.awt.Desktop;
 import java.io.File;
 
-import pattern1.P1controller;
-
 /**
  * @author Charles Cheng
  *
@@ -18,7 +16,7 @@ public class InputProcessor {
 		titles = new Title();
 	}
 	
-	public void processInput(String command) throws Exception {
+	public void processInput(String command) {
 		String[] arr = command.trim().split(" ", 2);
 		String commandType = arr[0];
 		String commandString="";
@@ -50,9 +48,6 @@ public class InputProcessor {
 		} else if(commandType.equalsIgnoreCase("exit")) {	// Exit command
 			System.out.println("See you again. Have a nice day!");
 			System.exit(0);
-		} else if (commandType.equalsIgnoreCase("switch")) {	// Switch command
-			P1controller p1 = new P1controller();
-			p1.runController();
 		} else {	// Invalid command
 			System.out.println("Invalid command pattern!\n");
 		}

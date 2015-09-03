@@ -6,17 +6,6 @@ public class P1controller {
 		Data data = new Data();
 		Alphabetizer al = new Alphabetizer();
 		CircularShift cs = new CircularShift();
-	//Called by Controller return void
-	public void runController() throws Exception {
-		
-		while(true){
-			ti.takeInput(data);;
-			cs.circularShift(data);
-			al.alphabetize(data);
-			data.display();
-		}
-	}
-	
 	
 	//Called by UIController return String
 	public String runUIController(String s) throws Exception {

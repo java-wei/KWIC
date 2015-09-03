@@ -5,47 +5,15 @@ import javax.swing.ActionMap;
 import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
-import javax.swing.BoxLayout;
 import javax.swing.JTextPane;
 import javax.swing.KeyStroke;
-
 import java.awt.Component;
-
-import javax.swing.JRadioButton;
-
-import net.miginfocom.swing.MigLayout;
-
 import javax.swing.JTextArea;
-
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-
-import java.awt.Insets;
-
-import javax.swing.JTextField;
-import javax.swing.JList;
-import javax.swing.AbstractListModel;
-
 import java.awt.Dimension;
-
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.factories.FormFactory;
-import com.jgoodies.forms.layout.RowSpec;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Pattern;
-
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JCheckBox;
-
 import pattern1.P1controller;
-
 import java.awt.event.ActionEvent;
-import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 
@@ -80,6 +48,7 @@ public class UIController {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	@SuppressWarnings("serial")
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setSize(new Dimension(10, 10));
@@ -131,13 +100,13 @@ public class UIController {
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-		     } else if(chckbxNewCheckBox.isSelected()&&!chckbxSharedSolution.isSelected()){
-		        	textArea.setText(Command.getText());
-		     } else
+		       } else if(chckbxNewCheckBox.isSelected()&&!chckbxSharedSolution.isSelected()){
+		        	textArea.setText(pattern2.Controller.run(Command.getText()));
+		       } else
 		    	 	textArea.setText("PLEASE TICK ONE PATTERN ONLY!!!");
-		     }
-			
-		  });
+		     	}
+			}
+		);
 		
 	}
 	
