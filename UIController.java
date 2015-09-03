@@ -49,7 +49,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 
-public class ui2 {
+public class UIController {
 
 	private JFrame frame;
 	private final JLabel lblCommand = new JLabel("Command:");
@@ -61,7 +61,7 @@ public class ui2 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ui2 window = new ui2();
+					UIController window = new UIController();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -73,7 +73,7 @@ public class ui2 {
 	/**
 	 * Create the application.
 	 */
-	public ui2() {
+	public UIController() {
 		initialize();
 	}
 
@@ -110,17 +110,20 @@ public class ui2 {
 		lblCommand.setAlignmentX(Component.CENTER_ALIGNMENT);
 		lblCommand.setBounds(0, 51, 76, 40);
 		frame.getContentPane().add(lblCommand);
+		
+		
 		int condition = JComponent.WHEN_FOCUSED;
-		  InputMap iMap = Command.getInputMap(condition);
-		  ActionMap aMap = Command.getActionMap();
+		InputMap iMap = Command.getInputMap(condition);
+		ActionMap aMap = Command.getActionMap();
 
-		  String enter = "enter";
-		  iMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter);
-		  aMap.put(enter, new AbstractAction() {
-			
-			 P1controller p1 = new P1controller();
-		     @Override
-		     public void actionPerformed(ActionEvent arg0) {
+		String enter = "enter";
+		iMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter);
+		
+		//when enter pressed react
+		aMap.put(enter, new AbstractAction() {
+			P1controller p1 = new P1controller();
+		    @Override
+		    public void actionPerformed(ActionEvent arg0) {
 		    	
 		       if(chckbxSharedSolution.isSelected()&&!chckbxNewCheckBox.isSelected()){
 		        	System.out.println("Pattern" +Command.getText()+ "was called");
@@ -132,10 +135,9 @@ public class ui2 {
 					}
 		        	//display("Pattern1 was called");
 		     } else if(chckbxNewCheckBox.isSelected()&&!chckbxSharedSolution.isSelected()){
-		    	 	System.out.println("Pattern" +chckbxNewCheckBox.getText()+ "was called"+Command.getText());
 		        	textArea.setText(Command.getText());
 		     } else
-		    	 textArea.setText("PLEASE TICK ONE PATTERN ONLY!!!");
+		    	 	textArea.setText("PLEASE TICK ONE PATTERN ONLY!!!");
 		     }
 			
 		  });
