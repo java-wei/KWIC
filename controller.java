@@ -7,7 +7,7 @@ import pattern2.Controller;
 
 public class controller {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		@SuppressWarnings("resource")
 		Scanner reader = new Scanner(System.in);
 		P1controller p1 = new P1controller();

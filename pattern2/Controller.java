@@ -11,8 +11,9 @@ public class Controller {
 
 	/**
 	 * @param args
+	 * @throws Exception 
 	 */
-	public static void run() {
+	public static void run() throws Exception {
 		InputProcessor processor = new InputProcessor();
 		OutputDisplayer displayer = new OutputDisplayer();
 

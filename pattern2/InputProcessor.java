@@ -18,7 +18,7 @@ public class InputProcessor {
 		titles = new Title();
 	}
 	
-	public void processInput(String command) {
+	public void processInput(String command) throws Exception {
 		String[] arr = command.trim().split(" ", 2);
 		String commandType = arr[0];
 		String commandString="";
